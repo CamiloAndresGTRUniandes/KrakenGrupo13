@@ -5,12 +5,13 @@ const {Login} = require('./pages_object/login.js');
 const {Member} = require('./pages_object/Member');
 const  {Home} = require('./pages_object/Home');
 const {UserData} = require('./pages_object/userData');
+const {Tags} = require('./pages_object/Tags');
 
 const memberFrm= new Member(faker.internet.exampleEmail() );
 const loginFrm= new Login("Incio");
 const homeFrm= new Home();
 const userData = new UserData();
-
+const tags = new Tags();
 
 When('I enter email sign in', async function (){
 let element = await this.driver.$(loginFrm.txtEmail);
@@ -111,8 +112,98 @@ return await element.click();
 }
 );
 
+///Tags
+
+When('I click new tag',async function(){
+let element = await this.driver.$(tags.btnNewTag);
+return await element.click();
+}
+);
+When('I enter name tag', async function () {
+let element = await this.driver.$(tags.txtNameTag);
+tags.setNewNameTag(faker.music.songName());
+return await element.setValue(tags.nameTag);
+});
+
+When('I enter color tag', async function () {
+let element = await this.driver.$(tags.txtColor);
+tags.color="FF1347"
+return await element.setValue(tags.color);
+});
+            
+When('I enter description tag', async function () {
+let element = await this.driver.$(tags.txtDescription);
+tags.description=faker.lorem.paragraph();
+return await element.setValue(tags.description);
+});
+
+When('I click btnMetada tag',async function(){
+let element = await this.driver.$(tags.btnMetada);
+return await element.click();
+}
+);
+
+When('I enter metadata title tag', async function () {
+let element = await this.driver.$(tags.txtMetadataTitle);
+tags.metadataTitle=faker.company.name();
+return await element.setValue(tags.metadataTitle);
+});
+
+When('I enter description metadata tag', async function () {
+let element = await this.driver.$(tags.txtMetadataTitle);
+tags.metaDataDescription=faker.lorem.sentence();
+return await element.setValue(tags.metaDataDescription);
+});
+
+
+When('I enter url metadata tag', async function () {
+let element = await this.driver.$(tags.txtMetaDataURL);
+tags.metaDataURL=faker.internet.url();
+return await element.setValue(tags.metaDataURL);
+});
+
+When('I click btnSaveTag tag',async function(){
+let element = await this.driver.$(tags.btnSaveTag);
+return await element.click();
+}
+);
+
+When('I select the fist tag', async function()
+{
+let element = await this.driver.$(tags.selectFirstTag);
+return await element.click();                    
+}
+);
+
+When('I delete the tag', async function()
+{
+let element = await this.driver.$(tags.btnDeleteTag);
+return await element.click();                    
+}
+);
+
+When('I click confirm delete the tag', async function()
+{
+let element = await this.driver.$(tags.btnConfirmDeleteTag);
+return await element.click();                    
+}
+);
+
+
+
+
+
+
+///End-Tags
 
 // Home-Dashboard
+
+When('I click tags',async function(){
+let element = await this.driver.$(homeFrm.tag);
+return await element.click();
+}
+);
+
 When('I click perfil',async function(){
 let element = await this.driver.$('.gh-user-avatar.relative' );
 return await element.click();
