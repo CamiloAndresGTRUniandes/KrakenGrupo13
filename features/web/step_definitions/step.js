@@ -4,33 +4,27 @@ const { Before, BeforeAll, After, AfterAll } = require('@cucumber/cucumber');
 const {Login} = require('./pages_object/login.js');
 const {Member} = require('./pages_object/Member');
 const  {Home} = require('./pages_object/Home');
+const {UserData} = require('./pages_object/userData');
 
 const memberFrm= new Member(faker.internet.exampleEmail() );
 const loginFrm= new Login("Incio");
 const homeFrm= new Home();
+const userData = new UserData();
 
 
-When('I enter email {string}', async function (email){
+When('I enter email sign in', async function (){
 let element = await this.driver.$(loginFrm.txtEmail);
-return await element.setValue(email);
+return await element.setValue(userData.emailAdmin);
 });
 When('I enter password', async function () {
 let element = await this.driver.$(loginFrm.txtPassword);
 
-return await element.setValue('YonathanBr1983*');
+return await element.setValue(userData.passwordAdmin);
 });
 When('I click next', async function() {
 let element = await this.driver.$(loginFrm.btnLogin);
 return await element.click();
 });
-
-When('I select first meber', async function() {
-let element = await this.driver.$(loginFrm.btnLogin);
-return await element.click();
-});
-
-
-
 ///Functions' members
 
 When('I click member',async function(){

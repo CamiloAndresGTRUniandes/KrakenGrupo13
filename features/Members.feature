@@ -4,7 +4,7 @@ Feature: Members
 Scenario: Como usuario deseo crear un member y comprobar que si lo guardo
  Given  I navigate to page "http://localhost:2368/ghost/#/signin"
 And I wait for 5 seconds
-And I enter email "nathanbelt23@gmail.com"
+And I enter email sign in
 And I wait for 2 seconds
 And I enter password
 And I click next

@@ -1,6 +1,6 @@
 class Member {
 constructor(email) {
-this.txtName='input[name="name"]';
+this.txtName='/html/body/div[2]/div/main/section/div[2]/form/div/section/div/div[1]/div/div[1]/div[1]/input';
 this.txtEmail='input[name="email"]';
 this.txtMemberNote='#member-note';
 this.btnSave='button[class="gh-btn gh-btn-primary gh-btn-icon ember-view"]';
