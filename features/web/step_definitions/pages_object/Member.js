@@ -7,7 +7,7 @@ this.btnSave='/html/body/div[2]/div/main/section/div[1]/header/section/button';
 this.txtSearch='input[placeholder="Search members..."]';
 this.aYourProfile='/html/body/div[1]/div/ul/li[4]/a';
 
-this.iconSettings="/html/body/div[2]/div/main/section/div[1]/header/section/span/button/span/svg/circle";
+this.iconSettings="/html/body/div[2]/div/main/section/div[1]/header/section/span/button";
 this.btnDelete="/html/body/div[2]/div/main/section/div[1]/header/section/span/ul/li[2]/button";
 this.btnConfirmDelete="/html/body/div[5]/div/div/div[2]/button[2]/span";
 

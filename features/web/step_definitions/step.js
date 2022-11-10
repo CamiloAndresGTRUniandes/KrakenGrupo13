@@ -88,6 +88,29 @@ return await element.setValue(memberFrm.email);
 });
 
 
+When('I select setting', async function()
+{
+let element = await this.driver.$(memberFrm.iconSettings);
+return await element.click();
+
+}
+);
+
+When('I select button delete', async function()
+{
+let element = await this.driver.$(memberFrm.btnDelete);
+return await element.click();
+
+}
+);
+When('I Click btn ConfirmDelete', async function()
+{
+let element = await this.driver.$(memberFrm.btnConfirmDelete);
+return await element.click();
+
+}
+);
+
 
 // Home-Dashboard
 When('I click perfil',async function(){
