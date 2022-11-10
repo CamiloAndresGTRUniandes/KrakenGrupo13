@@ -28,7 +28,7 @@ return await element.click();
 ///Functions' members
 
 When('I click member',async function(){
-let element = await this.driver.$("li.relative > a[href='#/members/']");
+let element = await this.driver.$(homeFrm.member);
 return await element.click();
 }
 );
@@ -44,10 +44,12 @@ return await element.click();
 
 When('I enter name member', async function () {
 let element = await this.driver.$(memberFrm.txtName);
-return await element.setValue(faker.name.fullName());
+memberFrm.setNewName(faker.name.fullName());
+return await element.setValue(memberFrm.name);
 });
 
 When('I enter email member', async function (){
+this.email=faker.internet.exampleEmail();
 let element = await this.driver.$(memberFrm.txtEmail);
 return await element.setValue(memberFrm.email);
 });
@@ -62,6 +64,10 @@ When ('I save new member', async function (){
 let element = await this.driver.$(memberFrm.btnSave);
 return await element.click();
 });
+When ('I save member', async function (){
+let element = await this.driver.$(memberFrm.btnSave);
+return await element.click();
+});
 
 
 When('I selected first member',async function (){
@@ -73,8 +79,16 @@ When('I search by email member', async function()
 {
 let element = await this.driver.$(memberFrm.txtSearch);
 return await element.setValue(memberFrm.email); 
-
 });
+
+When('I search by name member', async function()
+{
+let element = await this.driver.$(memberFrm.txtSearch);
+return await element.setValue(memberFrm.email); 
+});
+
+
+
 // Home-Dashboard
 When('I click perfil',async function(){
 let element = await this.driver.$('.gh-user-avatar.relative' );
