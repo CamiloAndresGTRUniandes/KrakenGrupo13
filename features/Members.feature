@@ -8,7 +8,6 @@ And I wait for 2 seconds
 And I enter password
 And I click next
 And I wait for 2 seconds
-And I wait for 2 seconds
 And I click member
 And I wait for 5 seconds
 And I click new member
