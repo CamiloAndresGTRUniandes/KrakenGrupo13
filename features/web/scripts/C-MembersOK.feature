@@ -8,7 +8,6 @@ And I wait for 2 seconds
 And I enter password
 And I click next
 And I wait for 2 seconds
-And I wait for 2 seconds
 And I click member
 And I wait for 5 seconds
 And I click new member
@@ -109,6 +108,8 @@ And I wait for 2 seconds
 And I select button delete
 And I wait for 2 seconds
 And I Click btn ConfirmDelete
+And I wait for 2 seconds
+And I Click btn LeaveDelete
 
 #Exit Ghost-Begin
 And I wait for 3 seconds
