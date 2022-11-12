@@ -16,6 +16,7 @@ const tags = new Tags();
 const readFile = new ReadFile();
 
 var inputText = "";
+var inputTitle = "";
 
 
 When('I enter email sign in', async function () {
@@ -239,6 +240,12 @@ When('I enter text in {string}', async function (item) {
     let elementPath = readFile.getElement(item);
     let element = await this.driver.$(elementPath);
     inputText = faker.lorem.sentence();
+    if (item.includes('title')) inputTitle = inputText;
     return await element.setValue(inputText);
 });
 //Input text Generic Method End
+When('I search for results {string}', async function (item) {
+    let elementPath = readFile.getElement(item);
+    let element = await this.driver.$(elementPath);
+    return await element.setValue(inputTitle);
+});

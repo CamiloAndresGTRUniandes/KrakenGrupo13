@@ -15,6 +15,10 @@ class Pages{
                 return jsonData['pages']['pageTitle'];
             case item.includes('body'):
                 return jsonData['pages']['pageBody'];
+            case item.includes('published pages'):
+                return jsonData['pages']['publishedPages']; 
+            case item.includes('unpublish button'):
+                return jsonData['pages']['unPublishButton'];
             case item.includes('publish button'):
                 return jsonData['pages']['pagePublish'];
             case item.includes('continue'):
@@ -27,10 +31,30 @@ class Pages{
                 return jsonData['pages']['backToPages'];
             case item.includes('right now'):
                 return jsonData['pages']['scheduledTime'];
+            case item.includes('unschedule button'):
+                return jsonData['pages']['unschedule'];
             case item.includes('schedule button'):
                 return jsonData['pages']['scheduleButton'];
-                
-                
+            case item.includes('filter dropdown'):
+                return jsonData['pages']['filterDropdown'];
+            case item.includes('scheduled pages'):
+                return jsonData['pages']['scheduledPages'];
+            case item.includes('first page'):
+                return jsonData['pages']['selectScheduled'];
+            case item.includes('convert to draft'):
+                return jsonData['pages']['convertToDraft']; 
+            case item.includes('search button'):
+                return jsonData['pages']['search'];   
+            case item.includes('input'):
+                return jsonData['pages']['inputSearch'];
+            case item.includes('select option'):
+                return jsonData['pages']['selectOption'];   
+            case item.includes('side menu button'):
+                return jsonData['pages']['sideMenu'];   
+            case item.includes('delete post button'):
+                return jsonData['pages']['deletePost'];  
+            case item.includes('delete confirmation button'):
+                return jsonData['pages']['deleteConfirmation'];     
         }
     };
 };
