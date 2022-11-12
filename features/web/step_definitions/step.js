@@ -119,6 +119,12 @@ When('I Click btn ConfirmDelete', async function () {
 
 }
 );
+When('I Click btn LeaveDelete', async function () {
+    let element = await this.driver.$(memberFrm.btnLeaveDelete);
+    return await element.click();
+
+}
+);
 
 ///Tags
 
@@ -385,7 +391,7 @@ When('I click perfil', async function () {
 );
 When('I click your profile', async function () {
 
-    let element = await this.driver.$(this.aYourProfile);
+    let element = await this.driver.$(yourProfileFRM.aYourProfile);
     return await element.click();
 }
 );
