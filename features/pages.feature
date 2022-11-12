@@ -143,64 +143,64 @@ And I wait for 3 seconds
 ##Exit Ghost-End
 
 
-##############################################################################################
-########### Escenario 8: Como usuario deseo hacer unpublish de una pagina publicada ##########
-##############################################################################################
-#@user208 @web
-#Scenario: Como usuario deseo hacer unpublish de una pagina publicada
-#Given  I navigate to page "http://localhost:2368/ghost/#/signin"
-#
-##Start Ghost-Login
-#And I wait for 3 seconds
-#And I enter email sign in
+#############################################################################################
+########## Escenario 8: Como usuario deseo hacer unpublish de una pagina publicada ##########
+#############################################################################################
+@user208 @web
+Scenario: Como usuario deseo hacer unpublish de una pagina publicada
+Given  I navigate to page "http://localhost:2368/ghost/#/signin"
+
+#Start Ghost-Login
+And I wait for 3 seconds
+And I enter email sign in
+And I wait for 2 seconds
+And I enter password
+And I click next
+And I wait for 2 seconds
+#Start Ghost-Login
+
+And I click "pages link"
+And I wait for 2 seconds
+And I click "New Page button inside pages module"
+And I wait for 2 seconds
+And I enter text in "page title field inside pages editor"
+And I wait for 2 seconds
+And I enter text in "page body field inside pages editor"
+And I wait for 4 seconds
+And I click "Publish button inside pages editor"
+And I wait for 3 seconds
+And I click "Right now dropdown inside pages publish"
+And I wait for 2 seconds
+And I click "Schedule button inside pages publish"
+And I wait for 3 seconds
+And I click "Continue button after pages editor"
+And I wait for 3 seconds
+And I click "Publish page button after pages editor"
+And I wait for 3 seconds
+And I click "Back to pages button inside pages publish"
+And I wait for 2 seconds
+And I click "Back to pages button inside pages editor"
+And I wait for 2 seconds
+And I click "Search button inside pages module"
 #And I wait for 2 seconds
-#And I enter password
-#And I click next
-#And I wait for 2 seconds
-##Start Ghost-Login
-#
-#And I click "pages link"
-#And I wait for 2 seconds
-#And I click "New Page button inside pages module"
-#And I wait for 2 seconds
-#And I enter text in "page title field inside pages editor"
-#And I wait for 2 seconds
-#And I enter text in "page body field inside pages editor"
-#And I wait for 4 seconds
-#And I click "Publish button inside pages editor"
-#And I wait for 3 seconds
-#And I click "Right now dropdown inside pages publish"
-#And I wait for 2 seconds
-#And I click "Schedule button inside pages publish"
-#And I wait for 3 seconds
-#And I click "Continue button after pages editor"
-#And I wait for 3 seconds
-#And I click "Publish page button after pages editor"
-#And I wait for 3 seconds
-#And I click "Back to pages button inside pages publish"
-#And I wait for 2 seconds
-#And I click "Back to pages button inside pages editor"
-#And I wait for 2 seconds
-#And I click "Search button inside pages module"
-##And I wait for 2 seconds
-##And I click "Published pages option inside filter dropdown"
-#And I wait for 2 seconds
-#And I search for results "entering text in input field inside pages module"
-#And I wait for 2 seconds
-#And I click "on Select option found inside pages module"
-#And I wait for 2 seconds
-#And I click "Unpublish button inside pages editor"
-#And I wait for 2 seconds
-#And I click "Convert to Draft button inside pages module"
-#And I wait for 2 seconds
-#And I click "Back to pages button inside pages editor"
-###Exit Ghost-Begin
-#And I wait for 3 seconds
-#And I click perfil
-#And I wait for 2 seconds
-#And I close my session
-#And I wait for 3 seconds
-###Exit Ghost-End
+#And I click "Published pages option inside filter dropdown"
+And I wait for 2 seconds
+And I search for results "entering text in input field inside pages module"
+And I wait for 2 seconds
+And I click "on Select option found inside pages module"
+And I wait for 2 seconds
+And I click "Unpublish button inside pages editor"
+And I wait for 2 seconds
+And I click "Convert to Draft button inside pages module"
+And I wait for 2 seconds
+And I click "Back to pages button inside pages editor"
+##Exit Ghost-Begin
+And I wait for 3 seconds
+And I click perfil
+And I wait for 2 seconds
+And I close my session
+And I wait for 3 seconds
+##Exit Ghost-End
 
 #############################################################################################
 ################### Escenario 10: Como usuario deseo eliminar una pagina  ###################

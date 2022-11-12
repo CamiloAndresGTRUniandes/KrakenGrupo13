@@ -21,7 +21,7 @@
         "unschedule": "/html/body/div[2]/div/main/div[1]/section/header/section/button[2]",
         "publishedPages" : "/html/body/div[1]/div/ul/li[3]",
         "unPublishButton": "/html/body/div[2]/div/main/div[1]/section/header/section/button[2]",
-        "selectOption":"/html/body/div[5]/div/div/div/div[1]/div/div/div[2]/div/ul/li[1]/ul/li",
+        "selectOption":"/html/body/div[5]/div/div/div/div[1]/div/div/div[2]/div/ul/li/ul/li",
         "sideMenu":"/html/body/div[2]/div/main/button",
         "deletePost":"/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/button",
         "deleteConfirmation":"/html/body/div[5]/div/div/div[2]/button[2]"
