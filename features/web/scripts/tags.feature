@@ -1,4 +1,4 @@
-Feature: Members
+Feature: Tags
 @user21 @web
 Scenario: Como usuario deseo crear un tag
 Given  I navigate to page "http://localhost:2368/ghost/#/signin"

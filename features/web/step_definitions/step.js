@@ -1,12 +1,16 @@
 const { faker } = require("@faker-js/faker");
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { Before, BeforeAll, After, AfterAll } = require('@cucumber/cucumber');
+
 const { Login } = require('./pages_object/login.js');
 const { Member } = require('./pages_object/Member');
 const { Home } = require('./pages_object/Home');
 const { UserData } = require('./pages_object/userData');
 const { Tags } = require('./pages_object/Tags');
-const {ReadFile} = require('./pages_object/readField');
+const { ReadFile } = require('./pages_object/readField');
+const { YourProfile } = require('./pages_object/YourProfile');
+const { ChangeTitleApp } = require('./pages_object/ChangeTitleApp');
+
 
 const memberFrm = new Member(faker.internet.exampleEmail());
 const loginFrm = new Login("Incio");
@@ -14,6 +18,9 @@ const homeFrm = new Home();
 const userData = new UserData();
 const tags = new Tags();
 const readFile = new ReadFile();
+const yourProfileFRM = new YourProfile();
+const changeTitleApp = new ChangeTitleApp();
+
 
 var inputText = "";
 var inputTitle = "";
@@ -186,15 +193,183 @@ When('I click confirm delete the tag', async function () {
     return await element.click();
 }
 );
-
-
-
-
-
-
 ///End-Tags
 
+//Init-Profile
+When('I enter name profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtNameYourProfile);
+    return await element.setValue(faker.name.fullName());
+});
+
+When('I enter slug profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtSlug);
+    return await element.setValue(faker.music.songName());
+});
+
+
+
+When('I enter location profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtLocation);
+    return await element.setValue(faker.address.cityName());
+});
+
+
+When('I enter web site profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtWebSite);
+    return await element.setValue(faker.internet.url());
+});
+
+
+When('I enter facebook profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtFacebook);
+    let facebook = "https://www.facebook.com/" + faker.name.firstName();
+    return await element.setValue(facebook);
+});
+
+When('I enter twiter profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtTwitter);
+    let twitter = "https://www.twitter.com/" + faker.name.firstName();
+    return await element.setValue(twitter);
+});
+
+When('I enter bio profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtArea);
+    return await element.setValue(faker.lorem.sentence());
+});
+
+
+When('I click save your profile', async function () {
+    let element = await this.driver.$(yourProfileFRM.btnSaveYourProfile);
+    return await element.click();
+}
+);
+
+
+When('I enter old password', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtOldPassword);
+    return await element.setValue(userData.passwordAdmin);
+}
+);
+
+
+When('I enter new password', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtNewPasword);
+    return await element.setValue(userData.passwordChange);
+}
+);
+
+
+When('I enter verify password', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtVerifyPassword);
+    return await element.setValue(userData.passwordChange);
+}
+);
+
+When('I click change password', async function () {
+    let element = await this.driver.$(yourProfileFRM.btnChangePassword);
+    return await element.click();
+}
+);
+
+
+When('I enter new password sign in', async function () {
+    let element = await this.driver.$(loginFrm.txtPassword);
+    return await element.setValue(userData.passwordChange);
+});
+
+When('I close toad change password', async function () {
+    let element = await this.driver.$(yourProfileFRM.btnCloseToad);
+    return await element.click();
+}
+);
+
+
+/// For return  old password
+
+
+
+When('I enter old password-return', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtOldPassword);
+    return await element.setValue(userData.passwordChange);
+}
+);
+
+
+When('I enter new password-return', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtNewPasword);
+    return await element.setValue(userData.passwordAdmin);
+}
+);
+
+
+When('I enter verify password-return', async function () {
+    let element = await this.driver.$(yourProfileFRM.txtVerifyPassword);
+    return await element.setValue(userData.passwordAdmin);
+}
+);
+
+
+
+
+
+/// end
+
+//End-Profile
+
 // Home-Dashboard
+//Init Skin App
+When('I change skin app', async function () {
+    let element = await this.driver.$(homeFrm.btnChangeSkin);
+    return await element.click();
+}
+);
+
+//End Skin App
+
+///
+
+//Init change Title app
+
+When('I click button settings', async function () {
+    let element = await this.driver.$(homeFrm.btnSettings);
+    return await element.click();
+}
+);
+When('I click button general', async function () {
+    let element = await this.driver.$(changeTitleApp.btnGeneral);
+    return await element.click();
+}
+);
+When('I click button expand title', async function () {
+    let element = await this.driver.$(changeTitleApp.btnExpand);
+    return await element.click();
+}
+);
+
+When('I enter title app', async function () {
+    let element = await this.driver.$(changeTitleApp.txtTitle);
+    return await element.setValue(faker.name.jobTitle());
+});
+
+
+When('I enter description app', async function () {
+    let element = await this.driver.$(changeTitleApp.txtDescription);
+    return await element.setValue(faker.lorem.sentence());
+});
+
+When('I click button save title', async function () {
+    let element = await this.driver.$(changeTitleApp.btnSave);
+    return await element.click();
+}
+);
+
+
+
+
+
+
+//End change Title app
+
 
 When('I click tags', async function () {
     let element = await this.driver.$(homeFrm.tag);
@@ -202,12 +377,12 @@ When('I click tags', async function () {
 }
 );
 
+
 When('I click perfil', async function () {
     let element = await this.driver.$('.gh-user-avatar.relative');
     return await element.click();
 }
 );
-
 When('I click your profile', async function () {
 
     let element = await this.driver.$(this.aYourProfile);
