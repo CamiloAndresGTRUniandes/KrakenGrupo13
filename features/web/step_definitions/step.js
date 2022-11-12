@@ -6,20 +6,14 @@ const { Member } = require('./pages_object/Member');
 const { Home } = require('./pages_object/Home');
 const { UserData } = require('./pages_object/userData');
 const { Tags } = require('./pages_object/Tags');
-const { Posts } = require('./pages_object/Posts');
-const {Published}= require('./pages_object/Published');
-const {Scheduled} = require('./pages_object/scheduled');
-const {Pages} = require('./pages_object/pages');
+const {ReadFile} = require('./pages_object/readField');
 
 const memberFrm = new Member(faker.internet.exampleEmail());
 const loginFrm = new Login("Incio");
 const homeFrm = new Home();
 const userData = new UserData();
 const tags = new Tags();
-const posts = new Posts();
-const published = new Published();
-const scheduled = new Scheduled();
-const pages = new Pages();
+const readFile = new ReadFile();
 
 var inputText = "";
 
@@ -232,59 +226,19 @@ When('I say hello world', async function () {
 }
 );
 
-//Start-Posts
-When('I click element in posts {string}', async function (item) {
-    let elementPath = posts.getElementPath(item);
+
+//Click Generic Method start
+When('I click {string}', async function (item) {
+    let elementPath = readFile.getElement(item);
     let element = await this.driver.$(elementPath);
     return await element.click();
-}
-);
-When('I enter posts text in {string}', async function (item) {
-    let elementPath = posts.getElementPath(item);
+});
+//Click Generic Method end
+//Input text Generic Method start
+When('I enter text in {string}', async function (item) {
+    let elementPath = readFile.getElement(item);
     let element = await this.driver.$(elementPath);
     inputText = faker.lorem.sentence();
     return await element.setValue(inputText);
 });
-//End-Posts
-//Start-EditPost
-When('I click element in published {string}', async function (item) {
-    let elementPath = published.getElementPath(item);
-    let element = await this.driver.$(elementPath);
-    return await element.click();
-}
-);
-When('I enter published text in {string}', async function (item) {
-    let elementPath = published.getElementPath(item);
-    let element = await this.driver.$(elementPath);
-    inputText = faker.lorem.sentence();
-    return await element.setValue(inputText);
-});
-//End-EditPost
-//Start-DeleteScheduled
-When('I click element in scheduled {string}', async function (item) {
-    let elementPath = scheduled.getElementPath(item);
-    let element = await this.driver.$(elementPath);
-    return await element.click();
-}
-);
-When('I enter scheduled text in {string}', async function (item) {
-    let elementPath = scheduled.getElementPath(item);
-    let element = await this.driver.$(elementPath);
-    inputText = faker.lorem.sentence();
-    return await element.setValue(inputText);
-});
-//End-DeleteScheduled
-//Start-Pages
-When('I click element in pages {string}', async function (item) {
-    let elementPath = pages.getElementPath(item);
-    let element = await this.driver.$(elementPath);
-    return await element.click();
-}
-);
-When('I enter pages text in {string}', async function (item) {
-    let elementPath = pages.getElementPath(item);
-    let element = await this.driver.$(elementPath);
-    inputText = faker.lorem.sentence();
-    return await element.setValue(inputText);
-});
-//End-Pages
+//Input text Generic Method End
