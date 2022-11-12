@@ -1,8 +1,8 @@
 class UserData {
     constructor() {
-    this.emailAdmin='nathanbelt23@gmail.com';
-    this.passwordAdmin='YonathanBr1983*';
-    this.passwordChange='YonathanBr1984*'
+    this.emailAdmin='<YourEmail>';
+    this.passwordAdmin='<Youtpassword>';
+    this.passwordChange='<YourChangePassword>'
     }
     
     }
