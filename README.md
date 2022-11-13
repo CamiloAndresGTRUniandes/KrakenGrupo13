@@ -83,7 +83,7 @@ Criterios de revisión
 
 7. Dentro de la ruta \reports, es posible acceder a los reportes de ejecución de los casos de prueba.
 
-8. Las rutas a los documentos con las estrategias de pruebas actualizadas son:
+## Las rutas a los documentos con las estrategias de pruebas actualizadas son:
 
    a.  [Estrategia 1](https://uniandes-my.sharepoint.com/:b:/g/personal/c_guevarat_uniandes_edu_co/ERT-COBT4vdLpjGATIuMeNkBocFtiasAeRVKXIBpybhXpg?e=GDabaw)
    
