@@ -1,6 +1,13 @@
 # KrakenGrupo13
 Criterios de revisión
 
+# Nota: En el siguiente enlace se pueden encontrar los repositorios con las pruebas en Kraken y Cypress: 
+
+[KrakenGrupo13](https://github.com/CamiloAndresGTRUniandes/KrakenGrupo13)
+
+[CypressGrupo13](https://github.com/CamiloAndresGTRUniandes/CypressGrupo13)
+
+
 # 1. Funcionalidades bajo pruebas:
 
 | Id | Nombre |
