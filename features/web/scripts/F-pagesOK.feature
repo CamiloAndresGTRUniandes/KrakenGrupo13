@@ -202,51 +202,51 @@ And I close my session
 And I wait for 3 seconds
 ##Exit Ghost-End
 
-##############################################################################################
-#################### Escenario 10: Como usuario deseo eliminar una pagina  ###################
-##############################################################################################
-#@user210 @web
-#Scenario: Como usuario deseo eliminar una pagina 
-#Given  I navigate to page "http://localhost:2368/ghost/#/signin"
-#
-##Start Ghost-Login
-#And I wait for 25 seconds
-#And I enter email sign in
-#And I wait for 2 seconds
-#And I enter password
-#And I click next
-#And I wait for 2 seconds
-##Start Ghost-Login
-#
-#And I click "pages link"
-#And I wait for 2 seconds
-#And I click "New Page button inside pages module"
-#And I wait for 2 seconds
-#And I enter text in "page title field inside pages editor"
-#And I wait for 2 seconds
-#And I enter text in "page body field inside pages editor"
-#And I wait for 4 seconds
-#And I click "Publish button inside pages editor"
-#And I wait for 3 seconds
-#And I click "Continue button after pages editor"
-#And I wait for 3 seconds
-#And I click "Publish page button after pages editor"
-#And I wait for 3 seconds
-#And I click "Back to Editor button inside pages publish"
-#And I wait for 2 seconds
-#And I click "Back to pages button inside pages editor"
-#And I wait for 2 seconds
-#And I click "First page inside pages module"
-#And I wait for 2 seconds
-#And I click "Side menu button inside posts editor"
-#And I wait for 2 seconds
-#And I click "Delete post button inside posts editor"
-#And I wait for 2 seconds
-#And I click "Delete confirmation button inside posts editor"
-###Exit Ghost-Begin
-#And I wait for 3 seconds
-#And I click perfil
-#And I wait for 2 seconds
-#And I close my session
-#And I wait for 3 seconds
-###Exit Ghost-End
+#############################################################################################
+################### Escenario 10: Como usuario deseo eliminar una pagina  ###################
+#############################################################################################
+@user210 @web
+Scenario: Como usuario deseo eliminar una pagina 
+Given  I navigate to page "http://localhost:2368/ghost/#/signin"
+
+#Start Ghost-Login
+And I wait for 25 seconds
+And I enter email sign in
+And I wait for 2 seconds
+And I enter password
+And I click next
+And I wait for 2 seconds
+#Start Ghost-Login
+
+And I click "pages link"
+And I wait for 2 seconds
+And I click "New Page button inside pages module"
+And I wait for 2 seconds
+And I enter text in "page title field inside pages editor"
+And I wait for 2 seconds
+And I enter text in "page body field inside pages editor"
+And I wait for 4 seconds
+And I click "Publish button inside pages editor"
+And I wait for 3 seconds
+And I click "Continue button after pages editor"
+And I wait for 3 seconds
+And I click "Publish page button after pages editor"
+And I wait for 3 seconds
+And I click "Back to Editor button inside pages publish"
+And I wait for 2 seconds
+And I click "Back to pages button inside pages editor"
+And I wait for 2 seconds
+And I click "First page inside pages module"
+And I wait for 2 seconds
+And I click "Side menu button inside posts editor"
+And I wait for 2 seconds
+And I click "Delete post button inside posts editor"
+And I wait for 2 seconds
+And I click "Delete confirmation button inside posts editor"
+##Exit Ghost-Begin
+And I wait for 3 seconds
+And I click perfil
+And I wait for 2 seconds
+And I close my session
+And I wait for 3 seconds
+##Exit Ghost-End
